@@ -113,7 +113,7 @@ Irodori-TTS-serverのインストールフォルダの`voices`に`chara1.wav`と
 参照音声ファイル名を変えたい場合は、`main.py`の[36行目](https://github.com/asfdrwe/petitepaku/blob/3d77ddf0320ac92e9a9ec38ad699304c84bf2887/main.py#L36)を手で修正してください。
 
 ### システムプロンプト
-LLM が返答する際の基本ルールをシステムプロンプトに設定します。標準では `main.py`の[40行以下](https://github.com/asfdrwe/petitepaku/blob/3d77ddf0320ac92e9a9ec38ad699304c84bf2887/main.py#L40)で
+LLM が返答する際の基本ルールをシステムプロンプトに設定します。標準では `main.py`の[40行目辺りから](https://github.com/asfdrwe/petitepaku/blob/3d77ddf0320ac92e9a9ec38ad699304c84bf2887/main.py#L40)で
 ```
     "あなたはゆうかという名前の小学生の女の子です。小学生らしい親身で楽しい会話をしましょう。"
     "感情を表すために文頭に絵文字で感情を表してください。"
