@@ -12,7 +12,7 @@
 - ![chara1](chara1/open_open.png)
 - ![chara2](chara2/open_open.png)
 
-Windows + RTX 3060での実行例。音声合成に若干ラグがあります。Linux Fedora 44 + Radeon 7800XTだともっと反応が速いです。
+Windows + RTX 3060での実行例です。音声合成に若干ラグがあります。こちらのしゃべった音声は動画から削除しています。Linux Fedora 44 + Radeon 7800XTだともっと反応が速いです。
 
 https://github.com/user-attachments/assets/a273448a-ed01-48bb-924a-f6dc30e78a27
 
@@ -126,6 +126,9 @@ LLM が返答する際の基本ルールをシステムプロンプトに設定�
 これを変更すれば振る舞いが変わるので、変えたい場合は手で修正してください。
 
 キャラクタ画像と参照音声とシステムプロンプトの変更例は `main.py` の対応箇所のすぐ下にchara2(男の子)用の例をコメントアウトして入れてあるので参考にしてください。
+
+### 会話履歴
+標準では `main.py`の[39行目](https://github.com/asfdrwe/petitepaku/blob/3d77ddf0320ac92e9a9ec38ad699304c84bf2887/main.py#L39)の`MAX_HISTORY_TURNS = 3`で 3 往復しか履歴を保存しません。この数字を増やせばより多くの会話履歴を記憶して会話できます。
 
 ### LLM モデル
 別の LLM モデルを使いたい場合は `run-tab.bat` の[10行目](
