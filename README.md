@@ -108,7 +108,7 @@ uv run --no-sync python main.py
 参照フォルダを変更したい場合は`main.py`の[21行目](https://github.com/asfdrwe/petitepaku/blob/3d77ddf0320ac92e9a9ec38ad699304c84bf2887/main.py#L21)を手で修正してください。
 
 ### 参照音声
-Irodori-TTS-serverのインストールフォルダの`voices`に`chara1.wav`と`chara2.wav`が入っています。これを差し替えれば声質が変わります。
+Irodori-TTS-serverのインストールフォルダの`voices`に`chara1.wav`が入っています。これを差し替えれば声質が変わります。
 
 参照音声ファイル名を変えたい場合は、`main.py`の[36行目](https://github.com/asfdrwe/petitepaku/blob/3d77ddf0320ac92e9a9ec38ad699304c84bf2887/main.py#L36)を手で修正してください。
 
