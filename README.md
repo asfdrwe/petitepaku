@@ -1,7 +1,7 @@
 # ぷちパク
 ぷちパクは 4 枚のキャラクタ画像と参照音声を元に LLM と音声認識 AI と音声合成 AI を連携することでキャラクタと対話する音声AIアシスタントです。
 
-目と口を開けた画像(open_open.png)、目を開け口を閉じた画像(open_close.png)、目を閉じ口を開けた画像(close_open.png)、目と口を閉じた画像(close_close.png)の 4 枚の画像を音声の音量に合わせて切り替えて表示する、いわゆる PngTuber 技術と LLM実行環境 [llama.cpp](https://github.com/ggml-org/llama.cpp)、音声認識ツール[faster-whisper](https://github.com/SYSTRAN/faster-whisper)、音声合成ツール[Irodori-TTS-Server](https://github.com/Aratako/Irodori-TTS-Server)を組み合わせて実現しています。
+目と口を開けた画像(open_open.png)、目を開け口を閉じた画像(open_close.png)、目を閉じ口を開けた画像(close_open.png)、目と口を閉じた画像(close_close.png)の 4 枚の画像を再生音声の音量に合わせて切り替えて表示する、いわゆる PngTuber 技術と LLM実行環境 [llama.cpp](https://github.com/ggml-org/llama.cpp)、音声認識ツール[faster-whisper](https://github.com/SYSTRAN/faster-whisper)、音声合成ツール[Irodori-TTS-Server](https://github.com/Aratako/Irodori-TTS-Server)を組み合わせて実現しています。
 
 プログラムは [Gemini](https://gemini.google.com/app)、標準キャラ画像は[ComfyUI](https://comfy.org/)で[Anima](https://huggingface.co/circlestone-labs/Anima)モデルで生成した画像を[Qwen Image Edit 2511](https://huggingface.co/Qwen/Qwen-Image-Edit-2511)モデルで編集、標準参照音声は[Emoji-TTS](https://github.com/iron-mukakin/Emoji-TTS) で作成しています。
 
@@ -64,12 +64,12 @@ Irodori-TTS-server は `git`でクローンして環境に合わせて`uv sync`�
 LLM モデルをダウンロードしてください。Window自動インストールツールと同じモデルを使うなら[Gemma4 E2B Q4_K_M](https://huggingface.co/unsloth/gemma-4-E2B-it-GGUF/blob/main/gemma-4-E2B-it-Q4_K_M.gguf)です。
 
 #### 実行
-`llama.cpp` の `llama-server` を起動してください。
+llama.cpp の `llama-server` を起動してください。
 ```
 llama-server -m モデルのパス
 ```
 
-`Irodori-TTS-Server` を起動してください。Window自動インストールツールと同じモデル(int8 weight only)を使うなら次のようにします。
+`Irodori-TTS-Server` を起動してください。Windows 自動インストールツールと同じモデル(int8 weight only)を使うなら次のようにします。
 ```
 export IRODORI_HF_CHECKPOINT=Aratako/Irodori-TTS-v4-Small-Quantized/int8-weight-only
 uv run --no-sync python -m irodori_openai_tts --host 0.0.0.0 --port 8088
