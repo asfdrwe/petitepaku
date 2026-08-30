@@ -24,7 +24,7 @@ https://github.com/user-attachments/assets/a273448a-ed01-48bb-924a-f6dc30e78a27
 This project is licensed under the [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org).
 
 ## 動作環境
-Windows + RTX 3060 と Linux Fedora 44 + Radeon 7800XT で動作確認しています。M4 Mac mini でも動くはずです。なお、メモリ 8GB の Macbook Neo は`Irodori-TTS-Server`だけでメモリが足らなくてスワップが発生するため性能的に無理です。
+それなりの性能の GPU が必要です。Windows + RTX 3060 と Linux Fedora 44 + Radeon 7800XT で動作確認しています。M4 Mac mini でも動くはずです。なお、メモリ 8GB の Macbook Neo は`Irodori-TTS-Server`だけでメモリが足らなくてスワップが発生するため性能的に無理です。
 
 ## インストールと実行
 ### Windows　用自動インストールツール(CUDA用)
@@ -34,18 +34,32 @@ Windows + Nvidia環境向けに自動インストール＆実行ツールを用�
 
 [Git](https://github.com/asfdrwe/petitepaku/archive/refs/heads/main.zip) と [uv](https://docs.astral.sh/uv/) がインストールされていない場合は、`install_git_uv.bat`を右クリックして管理者権限で実行してインストールしてください。`winget`を利用してインストールします。
 
+次の警告画面が出る場合がありますが実行してください。
+![01.png](docs/01.png)
+
 `setup.bat`をダブルクリックしてください。`uv`で必要な Python 環境を構築し、`Irodori-TTS-Server`を`git`でインストールし`uv`で必要な Python 環境を構築して参照音声を`Irodori-TTS-Server\voices`にコピーし、CUDA12.4 用 `llama.cpp` をダウンロードして実行環境を構築します。
+![02.png](docs/02.png)
 
 `modeldownload.bat`をダブルクリックしてください。`.cache\huggingface` 以下に音声認識と音声合成に必要なモデルをダウンロードし、LLM として[Gemma4 E2B GGUF Q4_K_M](https://huggingface.co/unsloth/gemma-4-E2B-it-GGUF) をダウンロードします。両方合わせて 5GB 程度あります。
 
 これでインストールが完了しました。
+![03.png](docs/03.png)
 
 #### 実行
 `run-tab.bat`をダブルクリックしてください。 LLM と Irodori-TTS-Server と MAIN の 3 つのタブを持つターミナルと、キャラクタが表示されて目パチするウィンドウが開かれるはずです。
+![04.png](docs/04.png)
 
-SSDの速度によるのですが、LLM や Irodori-TTS-Server の起動に時間がかかる場合があるので、LLM と Irodori-TTS-Server のタブを見てそれぞれ http://127.0.0.1:8080/ や http://0.0.0.0:8088/ の表示があるまで、待っていてください。
+SSDの速度によるのですが、LLM や Irodori-TTS-Server の起動に時間がかかる場合があります。
+![05.png](docs/05.png)
+この状態ではまだ Irodori-TTS-Server が起動できていません。
 
-マイクで話しかけるか、キャラクタ画像の下の入力欄に会話内容を入れてEnterキーを押すか送信を推してください(マイクが見つからない場合は入力欄から文字で入力のみ可能になります)。数秒後に口パクをしながら音声で返答してくれるはずです。MAIN タブに音声認識内容や LLM の返答内容や 音声合成ツールの反応状況が表示されるので、参考にしてください。おそらく、最初の会話だけ Irodori-TTS-Server の音声合成初期化処理が入るのでタイムアウトになるはずですが、以後は数秒で音声合成するはずです。
+LLM と Irodori-TTS-Server のタブを見てそれぞれ http://127.0.0.1:8080/ や http://0.0.0.0:8088/ の表示があるまで、待っていてください。
+![06.png](docs/06.png)
+![07.png](docs/07.png)
+
+マイクで話しかけるか、キャラクタ画像の下の入力欄に会話内容を入れてEnterキーを押すか送信を推してください(マイクが見つからない場合は入力欄から文字で入力のみ可能になります)。数秒後に口パクをしながら音声で返答してくれるはずです。MAIN タブに音声認識内容や LLM の返答内容や 音声合成ツールの反応状況が表示されるので、参考にしてください。
+
+おそらく、最初の会話だけ Irodori-TTS-Server の音声合成初期化処理が入るので30秒以上経っても音声再生されずタイムアウトになったり、なんか妙な失敗をすることもあるようですが、しばらくと待てば以後はこちらの入力に対して10秒以内には反応を返してくれるはずです。
 
 ### 手動でインストールする場合
 macOS なら　[brew](https://brew.sh/)をインストールして uv をインストール(`brew install uv`)、Linuxならディストリビューションにしたがって git  や uv をインストールしてください。
