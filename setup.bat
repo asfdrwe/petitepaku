@@ -1,10 +1,10 @@
 @echo off
 chcp 65001 >nul
 
-echo Setup VoiceAIAssistant
+echo VoiceAIAssistant をセットアップします。
 uv sync --extra cuda
 
-echo Setup Irodori-TTS-Server
+echo Irodori-TTS-Server をセットアップします。
 git clone https://github.com/Aratako/Irodori-TTS-Server
 cd Irodori-TTS-Server
 uv sync --extra cu128
@@ -13,7 +13,7 @@ cd ..
 copy voices\chara1.wav Irodori-TTS-Server\voices
 copy voices\chara2.wav Irodori-TTS-Server\voices
 
-echo Setup llama.cpp
+echo llama.cpp をセットアップします。
 set "URL1=https://github.com/ggml-org/llama.cpp/releases/download/b10679/llama-b10679-bin-win-cuda-12.4-x64.zip"
 set "ZIP_FILE1=%~dp0llama-b10679-bin-win-cuda-12.4-x64.zip"
 set "URL2=https://github.com/ggml-org/llama.cpp/releases/download/b10679/cudart-llama-bin-win-cuda-12.4-x64.zip"
