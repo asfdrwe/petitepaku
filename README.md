@@ -5,10 +5,7 @@
 
 プログラムは [Gemini](https://gemini.google.com/app)、標準キャラ画像は[ComfyUI](https://comfy.org/)で[Anima](https://huggingface.co/circlestone-labs/Anima)モデルで生成した画像を[Qwen Image Edit 2511](https://huggingface.co/Qwen/Qwen-Image-Edit-2511)モデルで編集、標準参照音声は[Emoji-TTS](https://github.com/iron-mukakin/Emoji-TTS) で作成しています。
 
-- ![chara1](chara1/open_open.png)
-  - [参照音声](voices/chara1.wav)
-- ![chara2](chara1/open_open.png)
-  - [参照音声](voices/chara2.wav)
+![chara1](chara1/open_open.png) [参照音声](voices/chara1.wav) ![chara2](chara2/open_open.png) [参照音声](voices/chara2.wav)
 
 同様のものはたくさんあると思いますが、AI で簡単に作れるので自分でもシステムを作ってみました。
 
