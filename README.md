@@ -5,9 +5,16 @@
 
 プログラムは [Gemini](https://gemini.google.com/app)、標準キャラ画像は[ComfyUI](https://comfy.org/)で[Anima](https://huggingface.co/circlestone-labs/Anima)モデルで生成した画像を[Qwen Image Edit 2511](https://huggingface.co/Qwen/Qwen-Image-Edit-2511)モデルで編集、標準参照音声は[Emoji-TTS](https://github.com/iron-mukakin/Emoji-TTS) で作成しています。
 
-![chara1](chara1/open_open.png) [参照音声](voices/chara1.wav) ![chara2](chara2/open_open.png) [参照音声](voices/chara2.wav)
-
 同様のものはたくさんあると思いますが、AI で簡単に作れるので自分でもシステムを作ってみました。
+
+## 実行例
+標準キャラクタ
+- ![chara1](chara1/open_open.png)
+- ![chara2](chara2/open_open.png)
+
+Windows + RTX 3060での実行例。音声合成に若干ラグがあります。Linux Fedora 44 + Radeon 7800XTだともっと反応が速いです。
+
+https://github.com/user-attachments/assets/a273448a-ed01-48bb-924a-f6dc30e78a27
 
 ## ライセンス / License
 このリポジトリの成果物は [CC0 1.0 全世界 (CC0 1.0) パブリック・ドメイン提供](https://creativecommons.org) のもとで公開されています。
@@ -17,7 +24,7 @@
 This project is licensed under the [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org).
 
 ## 動作環境
-Windows + RTX 3060 と M4 Mac mini と Linux Fedora 44 + Radeon 7800XT で動作確認しています。メモリ 8GB の Macbook Neo は`Irodori-TTS-Server`だけでスワップが発生するので性能的に無理です。
+Windows + RTX 3060 と Linux Fedora 44 + Radeon 7800XT で動作確認しています。M4 Mac mini でも動くはずです。なお、メモリ 8GB の Macbook Neo は`Irodori-TTS-Server`だけでメモリが足らなくてスワップが発生するため性能的に無理です。
 
 ## インストールと実行
 ### Windows　用自動インストールツール(CUDA用)
