@@ -107,6 +107,8 @@ uv run --no-sync python main.py
 
 参照フォルダを変更したい場合は`main.py`の[21行目](https://github.com/asfdrwe/petitepaku/blob/3d77ddf0320ac92e9a9ec38ad699304c84bf2887/main.py#L21)を手で修正してください。
 
+Qwen Image Edit 2511 を使用してさまざまな表情の 4 枚画像を生成する[ワークフロー](https://github.com/asfdrwe/petitepaku/blob/main/Pngtuber%20Dataset1.json)を用意したので参考にしてください。
+
 ### 参照音声
 Irodori-TTS-serverのインストールフォルダの`voices`に`chara1.wav`が入っています。これを差し替えれば声質が変わります。
 
